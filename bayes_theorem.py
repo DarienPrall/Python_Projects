@@ -68,12 +68,20 @@ array_of_probability = np.array([sunny_percent, rainy_percent, foggy_percent])
 
 most_likely_state_of_weather = state_of_weather[np.argmax(probability_state_day0_given_umbrella)]
 
-for index in enumerate(index_of_weather):
-    print(f"The probability of a {index} Day given no umbrella is: {array_of_probability[index]:.2f} %.")
+# for index in enumerate(index_of_weather):
+#    print(f"The probability of a {index} Day given no umbrella is: {array_of_probability[index]:.2f} %.")
     
-# END OF PROJECT
+# EVIDENCE / OBSERVATIONS
 
+# 0 = no umbrella, 1 = yes umbrella
+# E is the observations
+E = [0, 0, 0, 1, 0, 0, 1, 1, 0, 1]
 
+length_of_observations = len(E)
+length_of_weather_states = len(index_of_weather)
+print(length_of_observations)
+print(length_of_weather_states)
 
+matrix = np.zeros(length_of_observations, length_of_weather_states)
 
 
